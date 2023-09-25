@@ -58,7 +58,7 @@ This bash script is located here: ([./bin/install_terraform_cli](./bin/install_t
 - This allow us an easier way to debug and execute manaually terraform cli install
 - This will allow better portability for other projects that need to install terraform Cli.
 
-### Shebang
+### Shebang Consideration
 
 A shebang (pronounces sha-bang) tells the bash script what program that will interpret the script. `#!/bin/bash`. 
 ChatGPT recommennded this format for bash: `#!/usr/bin/env bash`
@@ -66,10 +66,30 @@ ChatGPT recommennded this format for bash: `#!/usr/bin/env bash`
 - For portability for different os distributions
 - will search the user"s PATH for the bash executable
 
-When executing the bash script we can use the `./` shorthand notation to execute the bash script
-
 [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
 
+### Execution Considerations
+
+When executing the bash script we can use the `./` shorthand notation to execute the bash script
+E.g `./bin/install_terraform_cli`
+If we are using a script in gitpod.yml we need to point the script to a program to interpret it.
+E.g. ` source ./bin/install_terraform_cli`
+
+### Linux Permission Considerations
+
+in orther to make bash scripts executable we need to change linux permission for the fix to be executable at the user mode.
+
+```sh
+chmod u+x ./bin/install_terraform_cli
+```
+alternatively:
+```sh
+chmod 744 ./bin/install_terraform_cli
+```
+
+### GitHub Lifecycle (Before, init, Command)
+
+We need to be careful when using the init because it will not rerun if we start an existing workspace.
 
 
 # Reference
