@@ -116,6 +116,7 @@ Within a bash script we can set env without writing export eg.
 HELLO='world'
 
 echo $HELLO
+```
 
 ## Printing env Vars
 
@@ -129,14 +130,41 @@ if you want to Env var to persist accross all future bash terminal that are open
 
 #### Persisting Env Vars in Gitpod by storing them in Gitpod Secret Storagge
 
-```
+```sh
 gp env HELLO='world'
-
 ```
+
+
 
 All future workspace launched will set the env vvars for all bash terminals opened in those workspaces.
 
 You can also set en vars in the '.gitpod.ymal' but this can only contain non sensitive env vars
+
+
+### AWS CLI installation
+
+AWS CLi is installed for this project via bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+[Getting Started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+[AWS CLI ENV VARS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+we csn check if our AWS is configured correctly by running the following command:
+
+```sh
+aws sts get-caller-identity
+```
+If it successful you should seee a json payload that look lik this:
+
+```json
+{
+    "UserId": "AEDURCVVISVLXThC6L4VK",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::073193227607:user/terraform-beginner-bootcamp"
+}
+```
+WE neeed to generate aws cli credentials from IAM user in order to to the user cli.
+
 
 # Reference
 
@@ -151,3 +179,7 @@ You can also set en vars in the '.gitpod.ymal' but this can only contain non sen
 - [chmod permission calculator](https://chmod-calculator.com/)
 
 - [Gitpod lifecycle task](https://www.gitpod.io/docs/configure/workspaces/tasks)
+
+- [Getting Started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+- [AWS CLI ENV VARS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
