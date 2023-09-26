@@ -165,6 +165,51 @@ If it successful you should seee a json payload that look lik this:
 ```
 WE neeed to generate aws cli credentials from IAM user in order to to the user cli.
 
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their provider and modules from Terraform registry which is located at:
+[https://registry.terraform.io/](https://registry.terraform.io/)
+
+- **Providers** are interfaces to APIs that will allow you to creat resouces with terraform.
+- **Modules** are a way to make large amount of terraform code modular, portable and sharable
+
+[Random terraform provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+### Terraform console
+
+We can see all the terraform command by simply typing `terraform`. Some of which include:
+
+- **Terraform init** Terraform to initialize a new or existing Terraform working directory. It performs plugin installations, module installation, intitializing the backend and workspace.
+
+- **Terraform Plan** command in Terraform is used to generate an execution plan. It does not make any changes to your infrastructure but instead shows you what Terraform intends to do when you run terraform apply.
+
+- **Terraform apply** is used in Terraform to apply the changes defined in your Terraform configuration to your infrastructure. It is used to initialize, plan, review, confirm, execute and ouput infrastructure. An apply will promt a yes or no.
+
+- **Terraform apply -auto-approve** is used to automatically approve the execution plan without being prompted for confirmation.
+
+### Terraform Lock Files
+`.terraform.lock.hcl` contains the locked versioning for the providers or modules thtat should be used with this project.
+**The Terraform Lock File should be commited** to version control system (VSC) eg. Github
+
+### Terraform State Files
+
+`.terraform.tfstate`  conatain information about the current state of your infrastructure.
+
+This File **should not be committed** to your VSC.
+
+ This file contains sensitive data. If you loose this file, you loose knowing the state of your infrastructure.
+
+ `.terraform.tfstate.backup` is the previous state file state.
+
+ ### Terraform Directory
+
+ `.terraform` directory contains binaries of terraform prividers.
+
+
+
+
 
 # Reference
 
@@ -183,3 +228,5 @@ WE neeed to generate aws cli credentials from IAM user in order to to the user c
 - [Getting Started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 - [AWS CLI ENV VARS](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+- [Random terraform provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
