@@ -188,6 +188,9 @@ We can see all the terraform command by simply typing `terraform`. Some of which
 - **Terraform apply** is used in Terraform to apply the changes defined in your Terraform configuration to your infrastructure. It is used to initialize, plan, review, confirm, execute and ouput infrastructure. An apply will promt a yes or no.
 
 - **Terraform apply -auto-approve** is used to automatically approve the execution plan without being prompted for confirmation.
+  
+- **Terraform Destroy** is used in Terraform to destroy all the resources defined in your Terraform configuration. It effectively tears down your infrastructure to match the desired state defined in your configuration but in reverse.
+
 
 ### Terraform Lock Files
 `.terraform.lock.hcl` contains the locked versioning for the providers or modules thtat should be used with this project.
@@ -206,6 +209,30 @@ This File **should not be committed** to your VSC.
  ### Terraform Directory
 
  `.terraform` directory contains binaries of terraform prividers.
+
+ Terraform Destroy
+ is used in Terraform to destroy all the resources defined in your Terraform configuration. It effectively tears down your infrastructure to match the desired state defined in your configuration but in reverse.
+
+ ### Pull Request
+ Because i resolves  branch 11 issue before branch 10, I experiences difficulty merging *conflict in .terraform.lock.hcl* to main branch using Github so I had to do it from the command line interface.
+ first I used command
+ ```sh
+git pull origin main
+```
+then i used the command
+```sh
+git merge main
+```
+which failed due to conflict in .terraform.lock.hcl. so i used:
+```sh
+ config pull.rebase false
+```
+From gitpod activity bar i added before committing it, after which i used:
+```sh
+git push -u origin 10-simple-s3-bucket
+```
+I went back to github to Merge the pull request.
+
 
 
 
