@@ -233,6 +233,8 @@ Provide the following code (replace your tokrn in the file)
 }
 ```
 
+We have automated the workaround with the bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
+
 
 
 
