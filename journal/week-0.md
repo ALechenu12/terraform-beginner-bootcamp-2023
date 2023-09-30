@@ -1,5 +1,5 @@
 
-# Terraform Beginner Bootcamp 2023
+# Terraform Beginner Bootcamp 2023 - Week 0
 
 <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 
