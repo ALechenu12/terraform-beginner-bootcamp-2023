@@ -26,4 +26,24 @@ In Terraform we can set two kind of Variables:
 We can set terraform cloud variables to be sensitive so they are not visible in the user interface
 
 
-### Loading Variables
+### Loading Terraform input Variables
+
+[Terraform input variable](https://developer.hashicorp.com/terraform/language/values/variables)
+
+### var flag
+
+We can use the `-var` flag to set an input variable or override a variable in the tfvars file eg. `terraform -var user_ud="my-user_id"'
+
+### var-file flag
+-TODO : Research this Flag
+
+### terraform.tfvars
+
+This is the default file to load in terraform variables in blunk
+
+### auto.tfvars
+
+-TODO: documment this functionalit for terraform cloud 
+
+### order of terraform variables
+-TODO : document which terraform variables take presidence
