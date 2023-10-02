@@ -14,3 +14,16 @@ our root module structure is as follow:
 ```
 
 [Standard Module Structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+
+## Terraform input Variables
+
+### Terraform Cloud Variables
+
+In Terraform we can set two kind of Variables:
+- Environment variables - those you would set in your bash terminal eg. AWS credentials
+- Terraform Variables - those that you would normally set in your tfvars file
+
+We can set terraform cloud variables to be sensitive so they are not visible in the user interface
+
+
+### Loading Variables
