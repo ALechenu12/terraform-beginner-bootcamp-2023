@@ -189,3 +189,12 @@ We used jsonencode to create the json inline with hcl
 
 ```
 [jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
+
+## Terraform Resource Lifecycle
+
+This is the changing the lifecycle of resources
+
+[Meta Argument Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+## Teraform Data
+
