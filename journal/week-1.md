@@ -189,3 +189,39 @@ We used jsonencode to create the json inline with hcl
 
 ```
 [jsonencode](https://developer.hashicorp.com/terraform/language/functions/jsonencode)
+
+## Terraform Resource Lifecycle
+
+This is the changing the lifecycle of resources
+
+[Meta Argument Lifecycle](https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle)
+
+## Teraform Data
+Plain data values such as Local Values and Input Variables don't have any side-effects to plan against and so they aren't valid in replace_triggered_by. You can use terraform_data's behavior of planning an action each time input changes to indirectly use a plain value to trigger replacement.
+```tf
+resource "terraform_data" "content_version" {
+  input = var.content_version
+  
+}
+```
+
+```tf
+variable "revision" {
+  default = 1
+}
+
+resource "terraform_data" "replacement" {
+  input = var.revision
+}
+
+# This resource has no convenient attribute which forces replacement,
+# but can now be replaced by any change to the revision variable value.
+resource "example_database" "test" {
+  lifecycle {
+    replace_triggered_by = [terraform_data.replacement]
+  }
+}
+```
+
+[Terraform Data)(https://developer.hashicorp.com/terraform/language/resources/terraform-data_
+
