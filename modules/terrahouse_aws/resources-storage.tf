@@ -44,7 +44,7 @@ resource "aws_s3_object" "index_html" {
 
 }
 resource "aws_s3_object" "upload_assets" {
-  for_each = fileset(var.assets_path,"*.{jpg,png,gif}")
+  for_each = fileset(var.assets_path,"*")
   bucket = aws_s3_bucket.website_bucket.bucket
   key    = "assets/${each.key}"
   source = "${var.assets_path}/${each.key}"
