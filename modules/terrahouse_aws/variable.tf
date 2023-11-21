@@ -20,6 +20,7 @@ variable "bucket_name" {
     error_message = "The bucket name must be between 3 and 63 characters and can only contain letters, numbers, hyphens, and periods."
   }
 }
+/*
 
 variable "index_html_filepath" {
   description = "Path to the index.html file"
@@ -40,3 +41,4 @@ variable "error_html_filepath" {
     error_message = "The specified error_html_filepath does not exist or is not a valid file path."
   }
 }
+*/
