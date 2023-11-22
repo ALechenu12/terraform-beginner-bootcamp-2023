@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "website_bucket"{
 
   tags = {
     User_uuid = var.user_uuid
-    Hello = "jupiter"
+    Hello = "earth"
 
   }
 }
